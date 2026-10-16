@@ -8,7 +8,7 @@ import type {
 import {Aside} from '~/components/Aside';
 import {Footer} from '~/components/Footer';
 import {Header, HeaderMenu} from '~/components/Header';
-import {CartMain} from '~/components/CartMain';
+import {CartMain} from '~/components/cart/CartMain';
 import {
   SEARCH_ENDPOINT,
   SearchFormPredictive,
@@ -86,9 +86,9 @@ function SearchAside() {
                 ref={inputRef}
                 type="search"
                 list={queriesDatalistId}
+                className='w-full mb-5 p-3 rounded-md border border-[#1A2A3A]/20 focus:border-[#1A2A3A] outline-none transition-colors font-source'
               />
-              &nbsp;
-              <button onClick={goToSearch}>Search</button>
+              {/* <button onClick={goToSearch}>Search</button> */}
             </>
           )}
         </SearchFormPredictive>
@@ -136,7 +136,7 @@ function SearchAside() {
                     onClick={closeSearch}
                     to={`${SEARCH_ENDPOINT}?q=${term.current}`}
                   >
-                    <p>
+                    <p className='hover:text-brand-gold transition-colors duration-300'>
                       View all results for <q>{term.current}</q>
                       &nbsp; →
                     </p>
